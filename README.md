@@ -22,3 +22,17 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### ZJ：格式化代码
+VSCode 插件依赖
+1. Beautify
+2. EditorConfig for VS Code
+3. JS-CSS-HTML Formatter
+4. Prettier - Code formatter
+5. Prettier ESLint
+6. Vetur
+7. vue-format
+
+
+
+
