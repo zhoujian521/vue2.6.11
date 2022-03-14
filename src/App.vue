@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div>{{ appInfo }}</div>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -10,13 +11,22 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { State, Action, Getter, Mutation } from 'vuex-class'
 
 @Component({})
 export default class App extends Vue {
+  @State((state) => state.app.appInfo) appInfo: any
+  @Action('app/asyncGetAppInfo') asyncGetAppInfo: any
+  @Getter('app/getAppInfo') getAppInfo: any
+  @Mutation('app/update') updateApp: any
+
   mounted() {
-    console.log('====================================')
     console.log(process.env.VUE_APP_TITLE)
-    console.log('====================================')
+    this.asyncGetAppInfo({ key: 'value' })
+    // 处理 store中的 计算属性
+    const appInfo = this.getAppInfo
+    console.log(appInfo)
+    this.updateApp({ appInfo: '同步修改' })
   }
 }
 </script>
