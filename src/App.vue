@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div>{{ appInfo }}</div>
+    <a-button type="primary">Button></a-button>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -12,6 +13,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { State, Action, Getter, Mutation } from 'vuex-class'
+import { Button } from 'ant-design-vue'
+Vue.component(Button.name, Button)
 
 @Component({})
 export default class App extends Vue {
