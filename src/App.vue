@@ -18,7 +18,7 @@ import { Button } from 'ant-design-vue'
 
 Vue.component(Button.name, Button)
 
-import { enumerable, logger, debounce } from '@/decorater/index'
+import { logger, debounce } from '@/decorater/index'
 
 @Component({})
 export default class App extends Vue {

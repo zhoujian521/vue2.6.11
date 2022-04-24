@@ -1,3 +1,4 @@
+// 防抖装饰器
 export default function debounce(wait: number, immediate: boolean = false) {
   return function (target: any, key: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor<any> {
     let timeout: any
