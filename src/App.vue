@@ -17,8 +17,8 @@ import { State, Action, Getter, Mutation } from 'vuex-class'
 import { Button } from 'ant-design-vue'
 
 Vue.component(Button.name, Button)
-
-import { logger, debounce } from '@/decorater/index'
+// , debounce
+import { logger } from '@/decorater/index'
 
 @Component({})
 export default class App extends Vue {
@@ -34,7 +34,7 @@ export default class App extends Vue {
     return this.params
   }
 
-  @debounce(300, true)
+  // @debounce(300, true)
   @logger('event_get_detial2')
   private getDetial2(id?: string, category?: string) {
     console.log('============getDetial2========================')

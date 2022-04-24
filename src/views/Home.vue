@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import HelloWorld from '@/components/HelloWorld.vue' // @ is an alias to /src
-import { throttle } from '@/decorater/index'
+import { sealed, throttle } from '@/decorater/index'
 
 @Component({
   components: {
@@ -16,6 +16,7 @@ import { throttle } from '@/decorater/index'
   },
 })
 export default class Home extends Vue {
+  @sealed('Home')
   @throttle(300)
   private onClickLogo(event: Event) {
     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')

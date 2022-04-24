@@ -7,7 +7,7 @@ interface LogInfo {
 
 export default function logger(id: string, callback?: (info: LogInfo) => any) {
   let logInfo: LogInfo = { id }
-  return function (target: any, key: string, descriptor: TypedPropertyDescriptor<any>) {
+  return function (target: any, key: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor<any> {
     const original = descriptor.value
     if (typeof original === 'function') {
       descriptor.value = function (...args: any) {

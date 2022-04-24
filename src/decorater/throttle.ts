@@ -1,6 +1,7 @@
 // 节流装饰器
 export default function throttle(delay: number) {
   return function (target: any, key: string, descriptor: TypedPropertyDescriptor<any>): TypedPropertyDescriptor<any> {
+    console.log('============throttle========================')
     let lastTime: number | undefined
     let timeout: any
     const original = descriptor.value
